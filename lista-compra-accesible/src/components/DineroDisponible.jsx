@@ -1,3 +1,5 @@
+import { CheckCircle, XCircle } from "lucide-react";
+
 function DineroDisponible({ dineroDisponible, setDineroDisponible, total }) {
   const diferencia = dineroDisponible - total;
   const esSuficiente = diferencia >= 0;
@@ -19,9 +21,16 @@ function DineroDisponible({ dineroDisponible, setDineroDisponible, total }) {
 
         <div>
           <p className="text-lg font-medium">Diferencia:</p>
-          <p className={`text-xl font-bold ${esSuficiente ? "text-green-600" : "text-red-600"}`}>
-            {esSuficiente ? "+" : "-"} {Math.abs(diferencia).toFixed(2)} €
-          </p>
+          <div className="flex items-center gap-2 mt-1">
+            {esSuficiente ? (
+              <CheckCircle className="text-green-600 w-6 h-6" />
+            ) : (
+              <XCircle className="text-red-600 w-6 h-6" />
+            )}
+            <p className={`text-xl font-bold ${esSuficiente ? "text-green-600" : "text-red-600"}`}>
+              {esSuficiente ? "+" : "-"} {Math.abs(diferencia).toFixed(2)} €
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -29,6 +38,5 @@ function DineroDisponible({ dineroDisponible, setDineroDisponible, total }) {
 }
 
 export default DineroDisponible;
-
-// Este componente muestra el dinero disponible y calcula la diferencia con el total de la lista.
+// Este componente muestra el dinero disponible y la diferencia con el total de la lista.
 // Permite al usuario ingresar el dinero disponible y muestra si es suficiente para cubrir el total de la lista.

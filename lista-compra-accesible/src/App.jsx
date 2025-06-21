@@ -30,6 +30,11 @@ function App() {
     setProductos(actualizados);
   };
 
+  const vaciarLista = () => {
+  setProductos([]);
+};
+
+
   return (
     <div className="min-h-screen p-4 bg-gray-100 text-gray-900">
       <h1 className="text-3xl font-bold text-center mb-6">Lista de la Compra Accesible</h1>
@@ -37,7 +42,15 @@ function App() {
       <ProductInput onAddProduct={agregarProducto} />
 
       <ProductList productos={productos} onDelete={eliminarProducto} />
-      
+      <div className="text-center mt-4">
+        <button
+          onClick={vaciarLista}
+          className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition"
+        >
+          Vaciar lista
+        </button>
+      </div>
+
       <DineroDisponible
         dineroDisponible={dineroDisponible}
         setDineroDisponible={setDineroDisponible}
