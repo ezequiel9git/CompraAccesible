@@ -31,8 +31,12 @@ function App() {
   };
 
   const vaciarLista = () => {
-  setProductos([]);
-};
+    const confirmado = window.confirm("¿Estás seguro de que quieres vaciar toda la lista?");
+    if (confirmado) {
+      setProductos([]);
+    }
+  };
+
 
 
   return (
