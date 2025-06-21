@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import ProductInput from "./components/ProductInput";
 import ProductList from "./components/ProductList";
 import DineroDisponible from "./components/DineroDisponible";
+import LectorVoz from "./components/LectorVoz";
+
 
 
 function App() {
@@ -59,6 +61,10 @@ function App() {
         dineroDisponible={dineroDisponible}
         setDineroDisponible={setDineroDisponible}
         total={productos.reduce((acc, p) => acc + p.precio, 0)}
+      />
+      <LectorVoz
+        total={productos.reduce((acc, p) => acc + p.precio, 0)}
+        dineroDisponible={dineroDisponible}
       />
     </div>
   );
