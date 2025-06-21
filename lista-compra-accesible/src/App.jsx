@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import ProductInput from "./components/ProductInput";
 import ProductList from "./components/ProductList";
+import DineroDisponible from "./components/DineroDisponible";
+
 
 function App() {
   const [productos, setProductos] = useState([]);
@@ -35,6 +37,12 @@ function App() {
       <ProductInput onAddProduct={agregarProducto} />
 
       <ProductList productos={productos} onDelete={eliminarProducto} />
+      
+      <DineroDisponible
+        dineroDisponible={dineroDisponible}
+        setDineroDisponible={setDineroDisponible}
+        total={productos.reduce((acc, p) => acc + p.precio, 0)}
+      />
     </div>
   );
 }
