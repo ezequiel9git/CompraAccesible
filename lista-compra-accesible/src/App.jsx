@@ -1,10 +1,46 @@
+import { useState, useEffect } from "react";
+import ProductInput from "./components/ProductInput";
+import ProductList from "./components/ProductList";
+
 function App() {
+  const [productos, setProductos] = useState([]);
+  const [dineroDisponible, setDineroDisponible] = useState(0);
+
+  useEffect(() => {
+    const data = localStorage.getItem("estadoApp");
+    if (data) {
+      const { productos, dineroDisponible } = JSON.parse(data);
+      setProductos(productos);
+      setDineroDisponible(dineroDisponible);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("estadoApp", JSON.stringify({ productos, dineroDisponible }));
+  }, [productos, dineroDisponible]);
+
+  const agregarProducto = (producto) => {
+    setProductos([...productos, producto]);
+  };
+
+   const eliminarProducto = (id) => {
+    const actualizados = productos.filter((p) => p.id !== id);
+    setProductos(actualizados);
+  };
+
   return (
-    <div className="min-h-screen bg-blue-100 text-center p-6">
-      <h1 className="text-4xl font-bold text-blue-800">¡Tailwind funciona!</h1>
-      <p className="mt-4 text-lg">Estás listo para empezar 😄</p>
+    <div className="min-h-screen p-4 bg-gray-100 text-gray-900">
+      <h1 className="text-3xl font-bold text-center mb-6">Lista de la Compra Accesible</h1>
+
+      <ProductInput onAddProduct={agregarProducto} />
+
+      <ProductList productos={productos} onDelete={eliminarProducto} />
     </div>
   );
 }
 
 export default App;
+// Este es el componente principal de la aplicación.
+// Carga el estado inicial desde localStorage y permite agregar productos a la lista.
+// También guarda el estado actualizado en localStorage cada vez que cambia.
+// Utiliza el componente ProductInput para permitir al usuario ingresar nuevos productos.
