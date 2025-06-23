@@ -30,7 +30,6 @@ function SelectorVisual({ onProductoSeleccionado }) {
     const pictograma = pictogramas[producto] || (await obtenerPictogramaUrl(producto));
     onProductoSeleccionado({
       nombre: producto,
-      precio: 0,
       pictograma,
     });
   };

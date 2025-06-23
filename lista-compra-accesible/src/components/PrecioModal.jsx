@@ -1,4 +1,3 @@
-// src/components/PrecioModal.jsx
 import { useState } from "react";
 
 function PrecioModal({ producto, onConfirmar, onCancelar }) {
@@ -52,3 +51,4 @@ function PrecioModal({ producto, onConfirmar, onCancelar }) {
 }
 
 export default PrecioModal;
+

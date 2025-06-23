@@ -5,7 +5,6 @@ import DineroDisponible from "./components/DineroDisponible";
 import LectorVoz from "./components/LectorVoz";
 import SelectorVisual from "./components/SelectorVisual";
 import PrecioModal from "./components/PrecioModal";
-import { obtenerPictogramaUrl } from "./utils/obtenerPictograma";
 
 function App() {
   const [productos, setProductos] = useState([]);
@@ -29,9 +28,8 @@ function App() {
     setProductos((prev) => [...prev, { ...producto, id: Date.now() }]);
   };
 
-  const agregarDesdeSelectorVisual = async (nombre) => {
-    const pictograma = await obtenerPictogramaUrl(nombre);
-    setProductoPendiente({ nombre, pictograma });
+  const agregarDesdeSelectorVisual = (productoSinPrecio) => {
+    setProductoPendiente(productoSinPrecio);
   };
 
   const confirmarPrecio = (precio) => {
@@ -46,8 +44,7 @@ function App() {
   };
 
   const vaciarLista = () => {
-    const confirmado = window.confirm("¿Estás seguro de que quieres vaciar toda la lista?");
-    if (confirmado) {
+    if (window.confirm("¿Estás seguro de que quieres vaciar toda la lista?")) {
       setProductos([]);
     }
   };
@@ -93,9 +90,3 @@ function App() {
 }
 
 export default App;
-
-
-// Este es el componente principal de la aplicación.
-// Carga el estado inicial desde localStorage y permite agregar productos a la lista.
-// También guarda el estado actualizado en localStorage cada vez que cambia.
-// Utiliza el componente ProductInput para permitir al usuario ingresar nuevos productos.
