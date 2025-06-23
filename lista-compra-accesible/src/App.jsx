@@ -3,13 +3,14 @@ import ProductInput from "./components/ProductInput";
 import ProductList from "./components/ProductList";
 import DineroDisponible from "./components/DineroDisponible";
 import LectorVoz from "./components/LectorVoz";
-
-
+import SelectorVisual from "./components/SelectorVisual";
+import { obtenerPictogramaUrl } from "./utils/obtenerPictograma";
 
 function App() {
   const [productos, setProductos] = useState([]);
   const [dineroDisponible, setDineroDisponible] = useState(0);
 
+  // Cargar estado desde localStorage
   useEffect(() => {
     const data = localStorage.getItem("estadoApp");
     if (data) {
@@ -19,17 +20,31 @@ function App() {
     }
   }, []);
 
+  // Guardar estado en localStorage
   useEffect(() => {
     localStorage.setItem("estadoApp", JSON.stringify({ productos, dineroDisponible }));
   }, [productos, dineroDisponible]);
 
+  // Añadir producto manualmente desde ProductInput
   const agregarProducto = (producto) => {
-    setProductos([...productos, producto]);
+    const nuevoProducto = { ...producto, id: Date.now() };
+    setProductos((prev) => [...prev, nuevoProducto]);
   };
 
-   const eliminarProducto = (id) => {
-    const actualizados = productos.filter((p) => p.id !== id);
-    setProductos(actualizados);
+  // Añadir producto desde selector visual (con pictograma)
+  const agregarDesdeSelectorVisual = async (nombre) => {
+    const pictograma = await obtenerPictogramaUrl(nombre);
+    const nuevoProducto = {
+      id: Date.now(),
+      nombre,
+      precio: 0,
+      pictograma,
+    };
+    setProductos((prev) => [...prev, nuevoProducto]);
+  };
+
+  const eliminarProducto = (id) => {
+    setProductos((prev) => prev.filter((p) => p.id !== id));
   };
 
   const vaciarLista = () => {
@@ -39,7 +54,7 @@ function App() {
     }
   };
 
-
+  const total = productos.reduce((acc, p) => acc + p.precio, 0);
 
   return (
     <div className="min-h-screen p-4 bg-gray-100 text-gray-900">
@@ -47,7 +62,10 @@ function App() {
 
       <ProductInput onAddProduct={agregarProducto} />
 
+      <SelectorVisual onProductoSeleccionado={agregarDesdeSelectorVisual} />
+
       <ProductList productos={productos} onDelete={eliminarProducto} />
+
       <div className="text-center mt-4">
         <button
           onClick={vaciarLista}
@@ -60,10 +78,11 @@ function App() {
       <DineroDisponible
         dineroDisponible={dineroDisponible}
         setDineroDisponible={setDineroDisponible}
-        total={productos.reduce((acc, p) => acc + p.precio, 0)}
+        total={total}
       />
+
       <LectorVoz
-        total={productos.reduce((acc, p) => acc + p.precio, 0)}
+        total={total}
         dineroDisponible={dineroDisponible}
       />
     </div>
@@ -71,6 +90,7 @@ function App() {
 }
 
 export default App;
+
 // Este es el componente principal de la aplicación.
 // Carga el estado inicial desde localStorage y permite agregar productos a la lista.
 // También guarda el estado actualizado en localStorage cada vez que cambia.
