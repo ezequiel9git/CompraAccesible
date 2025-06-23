@@ -4,13 +4,14 @@ import ProductList from "./components/ProductList";
 import DineroDisponible from "./components/DineroDisponible";
 import LectorVoz from "./components/LectorVoz";
 import SelectorVisual from "./components/SelectorVisual";
+import PrecioModal from "./components/PrecioModal";
 import { obtenerPictogramaUrl } from "./utils/obtenerPictograma";
 
 function App() {
   const [productos, setProductos] = useState([]);
   const [dineroDisponible, setDineroDisponible] = useState(0);
+  const [productoPendiente, setProductoPendiente] = useState(null); // nuevo estado
 
-  // Cargar estado desde localStorage
   useEffect(() => {
     const data = localStorage.getItem("estadoApp");
     if (data) {
@@ -20,27 +21,24 @@ function App() {
     }
   }, []);
 
-  // Guardar estado en localStorage
   useEffect(() => {
     localStorage.setItem("estadoApp", JSON.stringify({ productos, dineroDisponible }));
   }, [productos, dineroDisponible]);
 
-  // Añadir producto manualmente desde ProductInput
   const agregarProducto = (producto) => {
-    const nuevoProducto = { ...producto, id: Date.now() };
-    setProductos((prev) => [...prev, nuevoProducto]);
+    setProductos((prev) => [...prev, { ...producto, id: Date.now() }]);
   };
 
-  // Añadir producto desde selector visual (con pictograma)
   const agregarDesdeSelectorVisual = async (nombre) => {
     const pictograma = await obtenerPictogramaUrl(nombre);
-    const nuevoProducto = {
-      id: Date.now(),
-      nombre,
-      precio: 0,
-      pictograma,
-    };
-    setProductos((prev) => [...prev, nuevoProducto]);
+    setProductoPendiente({ nombre, pictograma });
+  };
+
+  const confirmarPrecio = (precio) => {
+    if (productoPendiente) {
+      agregarProducto({ ...productoPendiente, precio });
+      setProductoPendiente(null);
+    }
   };
 
   const eliminarProducto = (id) => {
@@ -81,15 +79,21 @@ function App() {
         total={total}
       />
 
-      <LectorVoz
-        total={total}
-        dineroDisponible={dineroDisponible}
-      />
+      <LectorVoz total={total} dineroDisponible={dineroDisponible} />
+
+      {productoPendiente && (
+        <PrecioModal
+          producto={productoPendiente}
+          onConfirmar={confirmarPrecio}
+          onCancelar={() => setProductoPendiente(null)}
+        />
+      )}
     </div>
   );
 }
 
 export default App;
+
 
 // Este es el componente principal de la aplicación.
 // Carga el estado inicial desde localStorage y permite agregar productos a la lista.
