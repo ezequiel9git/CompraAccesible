@@ -1,7 +1,9 @@
-// src/utils/obtenerPictograma.js
+import { aliasPictogramas } from "./aliasPictogramas";
 
 export async function obtenerPictogramaUrl(nombreProducto) {
-  const query = encodeURIComponent(nombreProducto.trim().toLowerCase());
+  // Aplica alias si existe uno, si no usa el nombre tal cual
+  const nombreAlias = aliasPictogramas[nombreProducto] || nombreProducto;
+  const query = encodeURIComponent(nombreAlias.trim().toLowerCase());
 
   try {
     const respuesta = await fetch(
@@ -13,10 +15,10 @@ export async function obtenerPictogramaUrl(nombreProducto) {
     if (Array.isArray(datos) && datos.length > 0) {
       const id = datos[0]._id;
 
-      // Probar si existe una imagen PNG para ese ID
+      // URL de imagen PNG a 500px
       const urlImagen = `https://static.arasaac.org/pictograms/${id}/${id}_500.png`;
 
-      // Comprobamos que la imagen existe antes de retornarla
+      // Comprobar si la imagen existe antes de retornarla
       const test = await fetch(urlImagen, { method: "HEAD" });
       if (test.ok) {
         return urlImagen;
@@ -26,6 +28,6 @@ export async function obtenerPictogramaUrl(nombreProducto) {
     console.error("Error al obtener pictograma:", error);
   }
 
-  // Imagen de respaldo si falla
-  return "/imagen-no-disponible.png"; // o deja null
+  // Imagen de respaldo si no hay resultado o error
+  return "/imagen-no-disponible.png";
 }

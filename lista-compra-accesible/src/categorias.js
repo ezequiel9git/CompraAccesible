@@ -3,7 +3,7 @@
 export const categorias = {
   Alimentos: {
     Frutas: [
-      "Plátano", "Manzana", "Naranja", "Fresa", "Pera", "Melón", "Sandía", "Uvas", "Mango", "Kiwi", "Piña", "Cereza", "Mandarina", "Arándano", "Granada", "Coco", "Limón", "Lima", "Frambuesa", "Higo", "Pomelo", "Albaricoque", "Ciruela"
+      "Plátano", "Manzana", "Naranja", "Fresas", "Pera", "Melón", "Sandía", "Uvas", "Mango", "Kiwi", "Piña", "Cereza", "Mandarina", "Arándano", "Granada", "Coco", "Limón", "Lima", "Frambuesa", "Higo", "Pomelo", "Albaricoque", "Ciruela"
     ],
     Verduras: [
       "Lechuga", "Tomate", "Zanahoria", "Pimiento", "Brócoli", "Espinaca", "Calabacín", "Coliflor", "Pepino", "Berenjena", "Cebolla", "Ajo", "Champiñones", "Guisantes", "Alcachofa", "Apio", "Puerro", "Boniato", "Calabaza", "Rábano", "Remolacha", "Ensalada"
