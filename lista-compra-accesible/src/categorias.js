@@ -1,5 +1,12 @@
 export const categorias = {
   Alimentos: {
+    Aperitivos: [
+      "Aceitunas", "Barritas", "Chicles", "Chocolate", "Frutos secos", "Galletas", "Nachos", "Palitos de pan",
+      "Palomitas", "Patatas fritas", "Tortillas"
+    ], 
+    Bebidas: [
+      "Agua", "Batido", "Café", "Cerveza", "Coca-Cola", "Cola-Cao", "Infusión", "Leche", "Limonada", "Refrescos", "Sidra", "Vino", "Zumo"
+    ],
     Carnes: [
       "Bacon", "Carne de cordero", "Carne de res", "Carne de ternera", "Carne molida", "Chorizo", "Chuletas de cerdo",
       "Costilla", "Hamburguesa", "Jamón", "Pechuga de pavo", "Pechuga de pollo", "Salchichas", "Solomillo"
@@ -38,15 +45,9 @@ export const categorias = {
     Pasta: [
       "Espaguetis", "Fideos", "Lasaña", "Macarrones", "Tallarines"
     ],
-    Bebidas: [
-      "Agua", "Batido", "Café", "Cerveza", "Coca-Cola", "Cola-Cao", "Infusión", "Leche", "Limonada", "Refrescos", "Sidra", "Vino", "Zumo"
-    ],
-    Aperitivos: [
-      "Aceitunas", "Barritas", "Chicles", "Chocolate", "Frutos secos", "Galletas", "Nachos", "Palitos de pan",
-      "Palomitas", "Patatas fritas", "Tortillas"
-    ],
+
     Conservas: [
-      "Conservas de atún", "Conservas de sardina", "Caballa", "Melva", "Tomate triturado", "Pimientos en conserva", "Alcachofas en conserva", "Almejas en conserva"
+      "Conservas de atún", "Conservas de sardina", "Caballa", "Melva", "Tomate triturado", "Pimientos en conserva", "Almejas en conserva"
     ],
     Repostería: [
       "Azúcar", "Bizcocho", "Croissants", "Donut", "Dulces", "Galletas", "Galletas de chocolate", "Chocolate", "Harina", "Levadura", "Magdalenas", "Mermelada", "Nocilla", "Nutella", "Tarta", "Turrón"
@@ -60,21 +61,17 @@ export const categorias = {
   Higiene: {
     "Aseo personal": [
       "Acondicionador", "Champú", "Cepillo de dientes", "Compresas", "Cortauñas", "Crema corporal", "Cuchilla de afeitar",
-      "Desodorante", "Enjuague bucal", "Espuma de afeitar", "Gel de afeitado", "Gel de baño", "Hilo dental", "Jabón",
-      "Loción facial", "Pasta dental", "Perfume", "Salvaslips", "Tampones", "Toallitas húmedas", "Copa menstrual"
+      "Desodorante", "Enjuague bucal", "Espuma de afeitar", "Gel de afeitado", "Gel", "Hilo dental", "Jabón",
+      "Pasta dental", "Perfume", "Tampones", "Toallitas húmedas"
     ],
     "Hogar": [
-      "Ambientador", "Amoníaco", "Desatascador", "Desinfectante", "Detergente", "Fregasuelos", "Lejía", "Limpiacristales",
-      "Limpiador multiusos", "Suavizante"
+      "Desatascador", "Desinfectante", "Detergente", "Lejía", "Limpiacristales", "Limpiador multiusos", "Suavizante"
     ],
     "Papel y celulosa": [
-      "Pañuelos desechables", "Papel higiénico", "Rollos de cocina", "Servilletas", "Toallitas limpiadoras"
+      "Caja de pañuelos", "Pañuelos", "Papel higiénico", "Papel de cocina", "Papel de aluminio", "Servilletas", "Toallitas limpiadoras"
     ],
     "Utensilios de limpieza": [
       "Bayetas", "Cepillos", "Cubos", "Escobas", "Fregonas", "Guantes", "Plumeros", "Estropajos"
     ],
-    "Insecticidas y repelentes": [
-      "Ahuyentador ultrasónico", "Antimosquitos eléctrico", "Repelente corporal", "Spray insecticida", "Trampas para cucarachas"
-    ]
   }
 };

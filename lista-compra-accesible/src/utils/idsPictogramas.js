@@ -35,7 +35,7 @@ export const idsPictogramas = {
   "Papel higiénico": 12499,
   "Servilletas": 55971,
   "Pañuelos desechables": 12493,
-  "Bayetas": 17490,
+
 
   "Cepillo de dientes": 12468,
   "Pasta dental": 12470,
