@@ -1,60 +1,70 @@
-// src/categorias.js
-
 export const categorias = {
   Alimentos: {
     Frutas: [
-      "Plátano", "Manzana", "Naranja", "Fresas", "Pera", "Melón", "Sandía", "Uvas", "Mango", "Kiwi", "Piña", "Cereza", "Mandarina", "Arándano", "Granada", "Coco", "Limón", "Lima", "Frambuesa", "Higo", "Pomelo", "Albaricoque", "Ciruela"
+      "Aguacate", "Albaricoque", "Arándano", "Cereza", "Ciruela", "Coco", "Frambuesa", "Fresas", "Granada", "Higo",
+      "Kiwi", "Limón", "Lima", "Mandarina", "Manzana", "Melón", "Naranja", "Pera", "Piña", "Plátano", "Pomelo", "Sandía", "Uvas"
     ],
     Verduras: [
-      "Lechuga", "Tomate", "Zanahoria", "Pimiento", "Brócoli", "Espinaca", "Calabacín", "Coliflor", "Pepino", "Berenjena", "Cebolla", "Ajo", "Champiñones", "Guisantes", "Alcachofa", "Apio", "Puerro", "Boniato", "Calabaza", "Rábano", "Remolacha", "Ensalada"
+      "Ajo", "Alcachofa", "Apio", "Berenjena", "Boniato", "Brócoli", "Calabacín", "Calabaza", "Cebolla", "Champiñones",
+      "Coliflor", "Ensalada", "Espinaca", "Guisantes", "Lechuga", "Pepino", "Pimiento", "Puerro", "Rábano", "Remolacha",
+      "Tomate", "Zanahoria"
     ],
     Lácteos: [
-      "Leche", "Queso", "Yogur", "Mantequilla", "Nata", "Crema de queso", "Leche condensada", "Leche en polvo"
+      "Crema de queso", "Leche", "Leche condensada", "Leche en polvo", "Mantequilla", "Nata", "Queso", "Yogur"
     ],
     Carnes: [
-      "Carne de res", "Jamón", "Salchichas", "Chorizo", "Solomillo", "Bacon", "Pechuga de pollo", "Carne molida", "Costillas", "Chuletas de cerdo", "Carne de ternera", "Carne de cordero"
+      "Bacon", "Carne de cordero", "Carne de res", "Carne de ternera", "Carne molida", "Chorizo", "Chuletas de cerdo",
+      "Costilla", "Hamburguesa", "Jamón", "Pechuga de pavo", "Pechuga de pollo", "Salchichas", "Solomillo"
+    ],
+    Embutido: [
+      "Chorizo", "Fiambre de pavo", "Jamón Serrano", "Jamón cocido", "Lomo embuchado", "Mortadela", "Salchichón"
     ],
     Pescado: [
-      "Salmón", "Atún", "Merluza", "Gambas", "Mejillones", "Calamares", "Bacalao", "Sardinas", "Trucha", "Pulpo", "Anchoas", "Pescadilla", "Boquerones"
+      "Anchoas", "Atún", "Bacalao", "Boquerones", "Calamares", "Gambas", "Mejillones", "Merluza", "Pescadilla", "Pulpo",
+      "Salmón", "Sardinas", "Trucha"
     ],
     Panadería: [
-      "Pan", "Pan integral", "Bollos", "Tostadas", "Croissants", "Pan de molde", "Bagels", "Pan integral", "Dulces"
+      "Bagels", "Bizcocho", "Bollos", "Croissants", "Dulces", "Pan", "Pan de molde", "Pan integral"
     ],
     Cereales: [
-      "Arroz", "Pasta", "Lentejas", "Garbanzos", "Judías", "Quinoa", "Cuscús", "Avena", "Maíz"
+      "Arroz", "Avena", "Cuscús", "Garbanzos", "Judías", "Lentejas", "Maíz", "Pasta", "Quinoa"
     ],
     Congelados: [
-      "Verduras congeladas", "Pizza", "Helado", "Croquetas", "Nuggets", "Pescado"
+      "Croquetas", "Helado", "Nuggets", "Pescado", "Pizza", "Verduras congeladas"
+    ],
+    Pasta: [
+      "Espaguetis", "Fideos", "Lasaña", "Macarrones", "Tallarines"
     ],
     Bebidas: [
-      "Agua", "Zumo", "Refrescos", "Café", "Té", "Leche", "Cerveza", "Vino", "Sidra", "Limonada", "Batido"
+      "Agua", "Batido", "Café", "Cerveza", "Infusión", "Leche", "Limonada", "Refrescos", "Sidra", "Vino", "Zumo"
     ],
     Aperitivos: [
-      "Patatas fritas", "Frutos secos", "Galletas", "Chocolate", "Barritas", "Palomitas", "Chicles", "Nachos", "Tortillas", "Palitos de pan", "Aceitunas"
-    ],
+      "Aceitunas", "Barritas", "Chicles", "Chocolate", "Frutos secos", "Galletas", "Nachos", "Palitos de pan",
+      "Palomitas", "Patatas fritas", "Tortillas"
+    ]
   },
-
 
   Higiene: {
     "Aseo personal": [
-      "Champú", "Acondicionador", "Gel de baño", "Jabón", "Desodorante", "Cepillo de dientes", "Pasta dental", "Hilo dental",
-      "Enjuague bucal", "Cortauñas", "Cuchilla de afeitar", "Espuma de afeitar", "Crema corporal", "Loción facial", "Toallitas húmedas",
-      "Compresas", "Tampones", "Copa menstrual", "Salvaslips", "Gel de afeitado", "Perfume", "Desodorante"
+      "Acondicionador", "Champú", "Cepillo de dientes", "Compresas", "Cortauñas", "Crema corporal", "Cuchilla de afeitar",
+      "Desodorante", "Enjuague bucal", "Espuma de afeitar", "Gel de afeitado", "Gel de baño", "Hilo dental", "Jabón",
+      "Loción facial", "Pasta dental", "Perfume", "Salvaslips", "Tampones", "Toallitas húmedas", "Copa menstrual"
     ],
     "Bebé": [
-      "Pañales", "Toallitas para bebé", "Gel para bebé", "Crema para pañal", "Champú infantil", "Bastoncillos de algodón"
+      "Bastoncillos de algodón", "Champú infantil", "Crema para pañal", "Gel para bebé", "Pañales", "Toallitas para bebé"
     ],
     "Hogar": [
-      "Detergente", "Suavizante", "Lejía", "Amoníaco", "Limpiador multiusos", "Desinfectante", "Ambientador", "Desatascador", "Fregasuelos", "Limpiacristales"
+      "Ambientador", "Amoníaco", "Desatascador", "Desinfectante", "Detergente", "Fregasuelos", "Lejía", "Limpiacristales",
+      "Limpiador multiusos", "Suavizante"
     ],
     "Papel y celulosa": [
-      "Papel higiénico", "Servilletas", "Pañuelos desechables", "Rollos de cocina", "Toallitas limpiadoras"
+      "Pañuelos desechables", "Papel higiénico", "Rollos de cocina", "Servilletas", "Toallitas limpiadoras"
     ],
     "Utensilios de limpieza": [
-      "Bayetas", "Estropajos", "Guantes", "Fregonas", "Cubos", "Escobas", "Cepillos", "Plumeros"
+      "Bayetas", "Cepillos", "Cubos", "Escobas", "Fregonas", "Guantes", "Plumeros", "Estropajos"
     ],
     "Insecticidas y repelentes": [
-      "Spray insecticida", "Antimosquitos eléctrico", "Repelente corporal", "Trampas para cucarachas", "Ahuyentador ultrasónico"
+      "Ahuyentador ultrasónico", "Antimosquitos eléctrico", "Repelente corporal", "Spray insecticida", "Trampas para cucarachas"
     ]
   }
 };

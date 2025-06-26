@@ -4,7 +4,6 @@ export const aliasPictogramas = {
   Naranja: "naranja fruta",
   Lima: "lima fruta",
   Limón: "limón fruta",
-  Mango: "mango fruta",
   Higo: "higo fruta",
   Mandarina: "mandarina fruta",
   Pomelo: "pomelo fruta",
