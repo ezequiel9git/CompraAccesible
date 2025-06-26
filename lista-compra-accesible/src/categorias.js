@@ -1,5 +1,19 @@
 export const categorias = {
   Alimentos: {
+    Carnes: [
+      "Bacon", "Carne de cordero", "Carne de res", "Carne de ternera", "Carne molida", "Chorizo", "Chuletas de cerdo",
+      "Costilla", "Hamburguesa", "Jamón", "Pechuga de pavo", "Pechuga de pollo", "Salchichas", "Solomillo"
+    ],
+    Cereales: [
+      "Arroz", "Avena", "Cuscús", "Garbanzos", "Judías", "Lentejas", "Maíz", "Pasta", "Quinoa"
+    ],
+    Congelados: [
+      "Croquetas", "Helado", "Nuggets", "Pescado", "Pizza", "Verduras congeladas"
+    ],
+    Embutido: [
+      "Chorizo", "Fiambre de pavo", "Jamón Serrano", "Jamón cocido", "Lomo embuchado", "Mortadela", "Salchichón"
+    ],
+    
     Frutas: [
       "Aguacate", "Albaricoque", "Arándano", "Cereza", "Ciruela", "Coco", "Frambuesa", "Fresas", "Granada", "Higo",
       "Kiwi", "Limón", "Lima", "Mandarina", "Manzana", "Melón", "Naranja", "Pera", "Piña", "Plátano", "Pomelo", "Sandía", "Uvas"
@@ -12,36 +26,35 @@ export const categorias = {
     Lácteos: [
       "Crema de queso", "Leche", "Leche condensada", "Leche en polvo", "Mantequilla", "Nata", "Queso", "Yogur"
     ],
-    Carnes: [
-      "Bacon", "Carne de cordero", "Carne de res", "Carne de ternera", "Carne molida", "Chorizo", "Chuletas de cerdo",
-      "Costilla", "Hamburguesa", "Jamón", "Pechuga de pavo", "Pechuga de pollo", "Salchichas", "Solomillo"
-    ],
-    Embutido: [
-      "Chorizo", "Fiambre de pavo", "Jamón Serrano", "Jamón cocido", "Lomo embuchado", "Mortadela", "Salchichón"
-    ],
+
     Pescado: [
       "Anchoas", "Atún", "Bacalao", "Boquerones", "Calamares", "Gambas", "Mejillones", "Merluza", "Pescadilla", "Pulpo",
       "Salmón", "Sardinas", "Trucha"
     ],
     Panadería: [
-      "Bagels", "Bizcocho", "Bollos", "Croissants", "Dulces", "Pan", "Pan de molde", "Pan integral"
+      "Pan", "Pan bao", "Pan de hamburguesa", "Pan de molde", "Pan integral", "Picos"
     ],
-    Cereales: [
-      "Arroz", "Avena", "Cuscús", "Garbanzos", "Judías", "Lentejas", "Maíz", "Pasta", "Quinoa"
-    ],
-    Congelados: [
-      "Croquetas", "Helado", "Nuggets", "Pescado", "Pizza", "Verduras congeladas"
-    ],
+
     Pasta: [
       "Espaguetis", "Fideos", "Lasaña", "Macarrones", "Tallarines"
     ],
     Bebidas: [
-      "Agua", "Batido", "Café", "Cerveza", "Infusión", "Leche", "Limonada", "Refrescos", "Sidra", "Vino", "Zumo"
+      "Agua", "Batido", "Café", "Cerveza", "Coca-Cola", "Cola-Cao", "Infusión", "Leche", "Limonada", "Refrescos", "Sidra", "Vino", "Zumo"
     ],
     Aperitivos: [
       "Aceitunas", "Barritas", "Chicles", "Chocolate", "Frutos secos", "Galletas", "Nachos", "Palitos de pan",
       "Palomitas", "Patatas fritas", "Tortillas"
+    ],
+    Conservas: [
+      "Conservas de atún", "Conservas de sardina", "Caballa", "Melva", "Tomate triturado", "Pimientos en conserva", "Alcachofas en conserva", "Almejas en conserva"
+    ],
+    Repostería: [
+      "Azúcar", "Bizcocho", "Croissants", "Donut", "Dulces", "Galletas", "Galletas de chocolate", "Chocolate", "Harina", "Levadura", "Magdalenas", "Mermelada", "Nocilla", "Nutella", "Tarta", "Turrón"
+    ],
+    Condimentos: [
+      "Aceite de oliva", "Pimienta", "Kétchup", "Mayonesa", "Mostaza", "Salsa de soja", "Sal", "Salsa barbacoa", "Vinagre", "Especias"
     ]
+
   },
 
   Higiene: {
@@ -49,9 +62,6 @@ export const categorias = {
       "Acondicionador", "Champú", "Cepillo de dientes", "Compresas", "Cortauñas", "Crema corporal", "Cuchilla de afeitar",
       "Desodorante", "Enjuague bucal", "Espuma de afeitar", "Gel de afeitado", "Gel de baño", "Hilo dental", "Jabón",
       "Loción facial", "Pasta dental", "Perfume", "Salvaslips", "Tampones", "Toallitas húmedas", "Copa menstrual"
-    ],
-    "Bebé": [
-      "Bastoncillos de algodón", "Champú infantil", "Crema para pañal", "Gel para bebé", "Pañales", "Toallitas para bebé"
     ],
     "Hogar": [
       "Ambientador", "Amoníaco", "Desatascador", "Desinfectante", "Detergente", "Fregasuelos", "Lejía", "Limpiacristales",
