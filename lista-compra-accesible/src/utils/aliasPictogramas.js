@@ -11,7 +11,6 @@ export const aliasPictogramas = {
 
   // Carnes
   Bacon: "bacon carne",
-  Jamón: "jamón carne",
   Chorizo: "chorizo carne",
   Salchichas: "salchichas carne",
   Solomillo: "solomillo carne",
@@ -30,15 +29,11 @@ export const aliasPictogramas = {
   // Otros posibles conflictos
   Pan: "pan alimento",
   Helado: "helado postre",
-  Pizza: "pizza comida",
   Chocolate: "chocolate alimento",
   Galletas: "galletas alimento",
-  Tostadas: "tostadas alimento",
 
   // Subcategorías
-  Bebé: "higiene bebé",
   "Aseo personal": "higiene personal",
   "Papel y celulosa": "productos de papel",
   "Utensilios de limpieza": "utensilios para limpieza",
-  "Insecticidas y repelentes": "insecticidas para hogar",
 };

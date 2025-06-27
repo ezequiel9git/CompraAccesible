@@ -17,6 +17,10 @@ export const idsPictogramas = {
   Salchichas: 16884,
   Costillas: 56165,
   Chuletas: 55972,
+  "Lata de aceitunas": 16781,
+  "Lata de aceitunas negras": 16775,
+  Dorada: 21806,
+  Bonito: 25857,
 
   Leche: 12411,
   Zumo: 12529,
@@ -49,4 +53,6 @@ export const idsPictogramas = {
   "Pan": 2494,
   "Pan integral": 13005,
   Dulces: 35769,
+
+  Conservas: 8280,
 };
