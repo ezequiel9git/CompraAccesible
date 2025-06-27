@@ -55,4 +55,6 @@ export const idsPictogramas = {
   Dulces: 35769,
 
   Conservas: 8280,
+  Tacones: 32922,
+
 };

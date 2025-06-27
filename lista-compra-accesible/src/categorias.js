@@ -80,5 +80,18 @@ export const categorias = {
       "Escobas", "Estropajos", "Fregonas", "Guantes",
       "Lavavajillas", "Lejía", "Limpiacristales", "Limpiador multiusos", "Mopa", "Pastilla de lavavajillas", "Plumeros", "Suavizante"
     ],
+  },
+
+  Ropa: {
+    "Ropa interior": [
+      "Bragas", "Calzoncillos", "Calcetines", "Medias", "Sujetador"
+    ],
+    Calzado: [
+      "Alpargata", "Botas de montaña", "Botines", "Chancletas", "Deportivas", "Pantuflas", "Sandalias", "Tacones"
+    ],
+    Complementos: [
+      "Anillo", "Bolso", "Bufanda", "Cinturón", "Coletero", "Collar", "Corbata", "Diadema", "Gafas", "Gafas de sol", "Gorro", "Guantes",
+       "Manopla", "Mochila", "Monedero", "Pajarita", "Pasamontañas", "Pendientes", "Pulsera", "Reloj", "Riñonera", "Sombrero", "Tirantes"
+    ]
   }
 };
