@@ -1,5 +1,8 @@
 function ProductList({ productos, onDelete }) {
-  const total = productos.reduce((acc, prod) => acc + prod.precio, 0);
+  const total = productos.reduce(
+    (acc, prod) => acc + (typeof prod.precio === "number" ? prod.precio : 0),
+    0
+  );
 
   return (
     <div className="w-full max-w-3xl mx-auto mt-6">
@@ -24,7 +27,11 @@ function ProductList({ productos, onDelete }) {
                 )}
                 <div>
                   <p className="text-lg font-semibold">{prod.nombre}</p>
-                  <p className="text-sm text-gray-600">{prod.precio.toFixed(2)} €</p>
+                  <p className="text-sm text-gray-600">
+                    {typeof prod.precio === "number" ? `${prod.precio.toFixed(2)} €` : "Sin precio"}
+                    {prod.kilos != null && ` | ${prod.kilos} kg`}
+                    {prod.unidades != null && ` | ${prod.unidades} ud`}
+                  </p>
                 </div>
               </div>
 
@@ -47,5 +54,7 @@ function ProductList({ productos, onDelete }) {
 }
 
 export default ProductList;
+
+
 // Este componente muestra la lista de productos seleccionados.
 // Permite eliminar productos de la lista y muestra el total acumulado.

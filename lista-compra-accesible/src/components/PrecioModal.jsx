@@ -2,11 +2,20 @@ import { useState } from "react";
 
 function PrecioModal({ producto, onConfirmar, onCancelar }) {
   const [precio, setPrecio] = useState("");
+  const [kilos, setKilos] = useState("");
+  const [unidades, setUnidades] = useState("");
 
   const manejarConfirmacion = () => {
-    const valor = parseFloat(precio);
-    if (!isNaN(valor) && valor >= 0) {
-      onConfirmar(valor);
+    const valorPrecio = parseFloat(precio);
+    const valorKilos = kilos ? parseFloat(kilos) : null;
+    const valorUnidades = unidades ? parseInt(unidades, 10) : null;
+
+    if (!isNaN(valorPrecio) && valorPrecio >= 0) {
+      onConfirmar(
+        valorPrecio,
+        !isNaN(valorKilos) ? valorKilos : null,
+        !isNaN(valorUnidades) ? valorUnidades : null
+      );
     } else {
       alert("Introduce un precio válido.");
     }
@@ -22,15 +31,36 @@ function PrecioModal({ producto, onConfirmar, onCancelar }) {
           )}
           <p className="text-lg font-medium">{producto.nombre}</p>
         </div>
+
         <input
           type="number"
           step="0.01"
           min="0"
           value={precio}
           onChange={(e) => setPrecio(e.target.value)}
-          className="w-full p-2 border rounded mb-4"
-          placeholder="Ej: 2.50"
+          className="w-full p-2 border rounded mb-3"
+          placeholder="Precio (€)"
         />
+
+        <input
+          type="number"
+          step="0.01"
+          min="0"
+          value={kilos}
+          onChange={(e) => setKilos(e.target.value)}
+          className="w-full p-2 border rounded mb-3"
+          placeholder="Kilos (opcional)"
+        />
+
+        <input
+          type="number"
+          min="0"
+          value={unidades}
+          onChange={(e) => setUnidades(e.target.value)}
+          className="w-full p-2 border rounded mb-4"
+          placeholder="Unidades (opcional)"
+        />
+
         <div className="flex justify-end gap-2">
           <button
             onClick={onCancelar}
@@ -51,4 +81,3 @@ function PrecioModal({ producto, onConfirmar, onCancelar }) {
 }
 
 export default PrecioModal;
-

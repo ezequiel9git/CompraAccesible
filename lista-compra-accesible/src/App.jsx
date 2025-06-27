@@ -9,7 +9,7 @@ import PrecioModal from "./components/PrecioModal";
 function App() {
   const [productos, setProductos] = useState([]);
   const [dineroDisponible, setDineroDisponible] = useState(0);
-  const [productoPendiente, setProductoPendiente] = useState(null); // nuevo estado
+  const [productoPendiente, setProductoPendiente] = useState(null);
 
   useEffect(() => {
     const data = localStorage.getItem("estadoApp");
@@ -25,16 +25,21 @@ function App() {
   }, [productos, dineroDisponible]);
 
   const agregarProducto = (producto) => {
-    setProductos((prev) => [...prev, { ...producto, id: Date.now() }]);
+    setProductos((prev) => [...prev, { ...producto, id: producto.id || Date.now() }]);
   };
 
   const agregarDesdeSelectorVisual = (productoSinPrecio) => {
     setProductoPendiente(productoSinPrecio);
   };
 
-  const confirmarPrecio = (precio) => {
+  const confirmarPrecio = (precio, kilos, unidades) => {
     if (productoPendiente) {
-      agregarProducto({ ...productoPendiente, precio });
+      agregarProducto({
+        ...productoPendiente,
+        precio,
+        kilos: kilos || null,
+        unidades: unidades || null,
+      });
       setProductoPendiente(null);
     }
   };
@@ -49,13 +54,13 @@ function App() {
     }
   };
 
-  const total = productos.reduce((acc, p) => acc + p.precio, 0);
+  const total = productos.reduce((acc, p) => acc + (p.precio || 0), 0);
 
   return (
     <div className="min-h-screen p-4 bg-gray-100 text-gray-900">
       <h1 className="text-3xl font-bold text-center mb-6">Lista de la Compra Accesible</h1>
 
-      <ProductInput onAddProduct={agregarProducto} />
+      <ProductInput onAddProduct={agregarDesdeSelectorVisual} />
 
       <SelectorVisual onProductoSeleccionado={agregarDesdeSelectorVisual} />
 

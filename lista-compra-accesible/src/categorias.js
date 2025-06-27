@@ -3,7 +3,7 @@ export const categorias = {
     Aperitivos: [
       "Aceitunas", "Almendras", "Barritas", "Cacahuetes", "Caramelos", "Chicles", "Chocolate", 
       "Frutos secos", "Galletas", "Golosinas", "Gominolas", "Nachos", "Nueces",
-      "Palomitas", "Pastas de té", "Patatas fritas", "Pistachos", "Pipas", "Quicos", "Regaliz", "Tortillas"
+      "Palomitas", "Pasas", "Pastas de té", "Patatas fritas", "Pistachos", "Pipas", "Quicos", "Regaliz", "Tortillas"
     ],
     Bebidas: [
       "Agua", "Agua con gas", "Batido", "Bebida isotónica", "Café", "Cerveza", "Champán", "Coca-Cola", 

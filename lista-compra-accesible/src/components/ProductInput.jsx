@@ -2,7 +2,6 @@ import { useState } from "react";
 
 function ProductInput({ onAddProduct }) {
   const [nombre, setNombre] = useState("");
-  const [precio, setPrecio] = useState("");
 
   const buscarPictograma = async (palabra) => {
     try {
@@ -19,23 +18,21 @@ function ProductInput({ onAddProduct }) {
   };
 
   const handleAdd = async () => {
-    if (!nombre || !precio) return;
+    if (!nombre.trim()) return;
 
     const pictograma = await buscarPictograma(nombre);
     const producto = {
       id: crypto.randomUUID(),
-      nombre,
-      precio: parseFloat(precio),
+      nombre: nombre.trim(),
       pictograma,
     };
 
-    onAddProduct(producto);
+    onAddProduct(producto); // Se completa en el modal con precio, kilos, unidades
     setNombre("");
-    setPrecio("");
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow p-4 mb-4 grid gap-3 md:grid-cols-3 sm:grid-cols-1 items-end w-full max-w-2xl mx-auto">
+    <div className="bg-white rounded-2xl shadow p-4 mb-4 grid gap-3 md:grid-cols-2 sm:grid-cols-1 items-end w-full max-w-2xl mx-auto">
       <div>
         <label className="block font-medium mb-1">Producto</label>
         <input
@@ -44,19 +41,6 @@ function ProductInput({ onAddProduct }) {
           onChange={(e) => setNombre(e.target.value)}
           className="w-full p-2 border rounded-lg"
           placeholder="Ej: Pan"
-        />
-      </div>
-
-      <div>
-        <label className="block font-medium mb-1">Precio (€)</label>
-        <input
-          type="number"
-          step="0.01"
-          min="0"
-          value={precio}
-          onChange={(e) => setPrecio(e.target.value)}
-          className="w-full p-2 border rounded-lg"
-          placeholder="Ej: 1.50"
         />
       </div>
 
@@ -71,6 +55,7 @@ function ProductInput({ onAddProduct }) {
 }
 
 export default ProductInput;
+
 // Este componente permite al usuario ingresar un producto con su nombre y precio.
 // Al hacer clic en "Agregar", busca un pictograma relacionado con el nombre del producto
 // y lo agrega a la lista de productos.
