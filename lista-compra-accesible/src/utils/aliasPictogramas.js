@@ -20,23 +20,12 @@ export const aliasPictogramas = {
 
   // Bebidas
   Té: "té bebida",
-  Zumo: "zumo bebida",
-  Cerveza: "cerveza bebida",
   Batido: "batido bebida",
 
   // Higiene personal
-  Gel: "gel de baño",
   Perfume: "perfume higiene",
-  Champú: "champú higiene",
-  Acondicionador: "acondicionador cabello",
   Espuma: "espuma de afeitar",
 
-  // Hogar o utensilios
-  Cubos: "cubos limpieza",
-  Guantes: "guantes limpieza",
-  Cepillos: "cepillos limpieza",
-  Bayetas: "bayetas limpieza",
-  Escobas: "escobas limpieza",
 
   // Otros posibles conflictos
   Pan: "pan alimento",
