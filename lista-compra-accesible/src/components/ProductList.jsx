@@ -27,11 +27,23 @@ function ProductList({ productos, onDelete }) {
                 )}
                 <div>
                   <p className="text-lg font-semibold">{prod.nombre}</p>
-                  <p className="text-sm text-gray-600">
-                    {typeof prod.precio === "number" ? `${prod.precio.toFixed(2)} €` : "Sin precio"}
-                    {prod.kilos != null && ` | ${prod.kilos} kg`}
-                    {prod.unidades != null && ` | ${prod.unidades} ud`}
-                  </p>
+                  <div className="flex flex-wrap gap-2 mt-1">
+                    {typeof prod.precio === "number" && (
+                      <span className="flex items-center gap-1 text-green-700 font-medium bg-green-100 px-2 py-1 rounded-full text-sm">
+                        💶 {prod.precio.toFixed(2)} €
+                      </span>
+                    )}
+                    {prod.kilos != null && (
+                      <span className="flex items-center gap-1 text-blue-700 font-medium bg-blue-100 px-2 py-1 rounded-full text-sm">
+                        ⚖️ {prod.kilos} kg
+                      </span>
+                    )}
+                    {prod.unidades != null && (
+                      <span className="flex items-center gap-1 text-purple-700 font-medium bg-purple-100 px-2 py-1 rounded-full text-sm">
+                        📦 {prod.unidades} unidades
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
 
